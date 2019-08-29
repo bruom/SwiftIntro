@@ -1,4 +1,4 @@
-//: [<-](@previous)
+//: [Anterior](@previous)
 /*:
  ### Controle de Fluxo
  
@@ -27,7 +27,7 @@ if condicao {
 var x:Int = 1
 var y:Int = 3
 if x < y {
-    print("x é menor que y")
+    print("\(x) é menor que \(y)")
 }
 
 var lista:[Int] = [1,2,3]
@@ -69,6 +69,28 @@ if horario > 12 {
 }
 
 /*:
+ Estruturas condicionais também são amplamente utilizadas para verificar conteúdo de variáveis opcionais de maneira segura, através de construções como a seguinte:
+ */
+
+var numeroOpcional:Int? = 2
+if let numeroNaoOpcional = numeroOpcional {
+    print(numeroNaoOpcional)
+}
+
+/*:
+ O código acima verifica, por meio da expressão *if let* se a variável numeroOpcional contém um valor ou está nula. Isso é feito através da criação de uma nova variável, numeroNaoOpcional (os nomes podem ser o que você quiser). Se numeroOpcional contém um valor não-nulo, este valor é passado para a variável numeroNaoOpcional recém-criada, e a execução entra no bloco do if. Caso contrário, a variável numeroNaoOpcional nem sequer é criada, e a execução pula o bloco do if. Se houver um *else*, este é executado quando a variável testada contém valor nulo.
+ */
+
+numeroOpcional = nil
+if let numeroNaoOpcional = numeroOpcional {
+    print(numeroNaoOpcional)
+} else {
+    print("numeroOpcional contém valor nulo")
+}
+
+//*: De qualquer forma, a variável numeroNaoOpcional existe apenas dentro do bloco do if, não existindo fora deste contexto em qualquer situação.
+
+/*:
  Quanto às estruturas de repetição, Swift conta com uma implementação de *for* baseada em percorrer conjuntos de valores.
  */
 
@@ -100,6 +122,6 @@ while vidas > 0 {
  Como sempre, se a condição nunca parar de ser verdadeira, entramos em loop infinito. O que é ruim.
  */
 
-while true {}
+//while true {} <-- bem ruim
 
-//: [->](@next)
+//: [Próximo](@next)

@@ -30,4 +30,20 @@ numeros.append(3)
 
 numeros[2] // elemento na posição 2, no caso o número 3
 
-//: [->](@next)
+/*:
+ Vetores possuem uma série de funções úteis para verificar seu conteúdo:
+ */
+
+numeros.count //tamanho do vetor
+numeros.contains(2) //verifica se o dado elemento existe no vetor
+numeros.isEmpty //verifica se está vazio
+//e assim por diante
+
+/*:
+ Outra estrutura frequentemente utilizada em Swift é o Dicionário - uma coleção de pares do tipo Chave-Valor que podem assumir tipos próprios. A seguir, dicionarioDeAlunos é craido como um dicionário do tipo *[Int:String]*. O primeiro tipo nesta assinatura, Int, corresponde às chaves, enquanto o segundo, String, aos valores. Assim, este é um dicionário que associa chaves numéricas para valores textuais (no caso, TIA para nome do aluno).
+ */
+
+var dicionarioDeAlunos:[Int:String] = [:] //cria um dicionario vazio
+dicionarioDeAlunos[31319769] = "Omella" //cria a chave 31319769 e associa a esta o valor passado
+
+//: [Próximo](@next)

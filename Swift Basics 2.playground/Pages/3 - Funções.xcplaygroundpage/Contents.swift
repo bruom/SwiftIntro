@@ -1,4 +1,4 @@
-//: [<-](@previous)
+//: [Anterior](@previous)
 /*:
  ### Funções
  
@@ -13,7 +13,7 @@ func helloWorld(){
 }
 
 /*:
- Uma função é um bloco de código - comandos contidos entre um par de { } - que recebe uma assinatura, por meio da qual podemos chamá-lo posteriormente. Podemos relacionar estas às funções matemáticas. Vamos ver um exemplo básico:
+ Uma função é um bloco de código - comandos contidos entre um par de { } - que recebe uma assinatura, por meio da qual podemos chamá-lo posteriormente. Podemos relacionar estas às funções matemáticas. Por exemplo:
  */
 
 func f(x:Double) -> Double {
@@ -30,7 +30,7 @@ func f(x:Double) -> Double {
 f(x: 23)
 var resultado:Double = f(x:2.56)
 
-//:Temos chamado funções toda vez que usamos, por exemplo, *print*. É só escrever seu nome e passar os parâmetros entre ( ). Notem que aqui eu explicitamente falei o nome do parâmetro passado, x, mas no print nós não fazemos isso. Por que será? Essa é pra vocês acharem.
+//:Temos chamado funções toda vez que usamos, por exemplo, *print*. É só escrever seu nome e passar os parâmetros entre ( ).
 //:Vamos ver um exemplo um pouco mais complexo de função.
 
 func bhaskara(a:Double, b:Double, c:Double) -> (Double?,Double?) {
@@ -58,8 +58,5 @@ if let raizReal = raizes.0, let raizReal2 = raizes.1 {
     raizReal + raizReal2
 }
 
-/*:
- Esse é o básico sobre funções. Elas são muito úteis e amplamente utilizadas - no tipo de programação que vamos fazer, a maior parte de todas as instruções que vamos escrever vão estar dentro de funções!
- */
 
 
