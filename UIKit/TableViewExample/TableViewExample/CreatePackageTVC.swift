@@ -40,6 +40,7 @@ class CreatePackageTVC: UITableViewController, UIPickerViewDelegate, UIPickerVie
         if indexPath.section == 1 {
             if indexPath.row == 0 {
                 pickerExpanded = !pickerExpanded
+                senderPicker.isHidden = !pickerExpanded
             }
             tableView.beginUpdates()
             tableView.endUpdates()
@@ -47,6 +48,7 @@ class CreatePackageTVC: UITableViewController, UIPickerViewDelegate, UIPickerVie
         if indexPath.section == 2 {
             if indexPath.row == 0 {
                 dateExpanded = !dateExpanded
+                datePicker.isHidden = !dateExpanded
             }
             tableView.beginUpdates()
             tableView.endUpdates()
