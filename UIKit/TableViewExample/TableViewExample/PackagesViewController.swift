@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PackagesViewController.swift
 //  TableViewExample
 //
 //  Created by Bruno Omella Mainieri on 10/09/19.
@@ -49,6 +49,7 @@ class PackagesViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    //TableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -83,16 +84,17 @@ class PackagesViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 77
-    }
-    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0{
             return "Encomendas Entregues"
         } else {
             return "Encomendas a Caminho"
         }
+    }
+    
+    //TableViewDelegate
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 77
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

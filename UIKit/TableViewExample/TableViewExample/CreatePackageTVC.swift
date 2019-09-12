@@ -36,6 +36,7 @@ class CreatePackageTVC: UITableViewController, UIPickerViewDelegate, UIPickerVie
         dateLabel.text = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .none)
     }
     
+    //TableViewDelegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1 {
             if indexPath.row == 0 {
@@ -77,18 +78,20 @@ class CreatePackageTVC: UITableViewController, UIPickerViewDelegate, UIPickerVie
         dateLabel.text = DateFormatter.localizedString(from: datePicker.date, dateStyle: .medium, timeStyle: .none)
     }
     
+    //PickerViewDataSource
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 3
+        return senders.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return senders[row]
     }
     
+    //PickerViewDelegate
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         senderLabel.text = senders[row]
     }
