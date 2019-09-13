@@ -23,6 +23,7 @@ class CompanyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = companySymbol ?? ""
         nameLabel.text = ""
         priceLabel.text = ""
         changeLabel.text = ""
@@ -41,13 +42,15 @@ class CompanyViewController: UIViewController {
         DispatchQueue.main.async {
             self.activ.stopAnimating()
             if let company = self.company, let prof = company.profile {
-                self.navigationController?.title = company.symbol
+                self.navigationItem.title = company.symbol
                 self.nameLabel.text = prof.companyName
                 self.priceLabel.text = "\(prof.price ?? 000.00)"
                 self.changeLabel.text = prof.changesPercentage
                 self.exchangeLabel.text = prof.exchange
                 self.industry.text = prof.industry
                 self.descLabel.text = prof.description
+            } else {
+                self.nameLabel.text = "Dados da companhia não disponíveis."
             }
         }
     }

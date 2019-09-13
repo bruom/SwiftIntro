@@ -25,8 +25,10 @@ class StocksViewController: UIViewController, UITableViewDelegate, UITableViewDa
         searchBar.delegate = self
         
         CompanyHandler.listCompanies { (res) in
-            self.stocks = res
-            self.filteredStocks = res
+            self.stocks = res.sorted(by: { (aListing, bListing) -> Bool in
+                (aListing.price ?? 0) > (bListing.price ?? 0)
+            })
+            self.filteredStocks = self.stocks
             DispatchQueue.main.async {
                 self.activ.stopAnimating()
                 self.tableView.reloadData()
